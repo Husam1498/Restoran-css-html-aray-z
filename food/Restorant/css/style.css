@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela&display=swap");
+
+/* Ortak olan alanlar */
+:root {
+  --primary: #ef5a6f;
+  --secondary: #536493;
+  --white: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+/* Navbar */
+#header {
+  position: relative;
+}
+#header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35rem;
+  height: 100vh;
+  background-color: #333;
+
+  z-index: -2;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  align-content: center;
+  font-size: 5rem;
+  color: var(--secondary);
+  font-weight: 400;
+  margin-left: 4rem;
+}
+.logo span {
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 600;
+}
+.navbar ul {
+  display: flex;
+  font-size: 2rem;
+}
+.navbar ul li {
+  margin-right: 7rem;
+  padding: 1rem 1rem;
+}
+.navbar ul li a {
+  color: var(--secondary);
+  font-weight: 400;
+  position: relative;
+  padding: 8px 0;
+}
+.navbar ul li a::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--primary);
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+  font-weight: 400;
+}
+.navbar ul li a:hover::before,
+.navbar ul li a.active::before {
+  width: 50%;
+}
+.navbar ul li:nth-child(3) a,
+.navbar ul li:nth-child(4) a {
+  color: var(--white);
+}
+/*Main*/
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+.bannerText {
+  position: relative;
+  max-width: 50rem;
+  margin-left: 8rem;
+}
+.bannerText h2 {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1.2em;
+  text-transform: uppercase;
+
+  color: var(--secondary);
+}
+.bannerText p {
+  font-size: 1.8rem;
+  color: var(--secondary);
+  font-weight: 400;
+  line-height: 1.8em;
+  margin: 2rem 0;
+}
+.bannerText a {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--secondary);
+  letter-spacing: 0.1rem;
+  font-size: 1.8rem;
+  padding: 1.5rem;
+}
+.bannerText a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  background-color: var(--primary);
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+.bannerText a:hover:before {
+  width: 100%;
+}
+
+.content .bannerImg {
+  position: relative;
+  width: 44rem;
+  height: 44rem;
+  background: #000;
+}
+.content .bannerImg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+/*İconlar*/
+.icons {
+  display: flex;
+  justify-content: end;
+}
+
+.icons .controls {
+  position: relative;
+  display: flex;
+}
+
+.icons .controls li {
+  margin-left: 2rem;
+  cursor: pointer;
+
+  transition: 0.5s ease-in-out;
+}
+.icons .controls li a i {
+  color: var(--primary);
+}
+.icons .controls li:hover {
+  opacity: 0.5;
+}
+
+/*Footer*/
+
+footer {
+  margin-top: 10rem;
+  display: flex;
+  background-color: var(--secondary);
+  color: var(--white);
+  justify-content: space-between;
+}
+footer .p {
+  margin-right: 10rem;
+  padding: 4rem;
+}
+footer .icon {
+  align-content: center;
+}
+footer .social {
+  display: flex;
+  align-items: center;
+}
+footer .social li a {
+  margin: 2rem;
+}
+footer .social li a i {
+  color: var(--primary);
+  transition: 0.3s ease-in-out;
+}
+footer .social li a i:hover {
+  opacity: 0.5;
+  transform: translateY(-1rem);
+}
